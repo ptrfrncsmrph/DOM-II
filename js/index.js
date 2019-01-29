@@ -48,4 +48,14 @@ window.onload = () => {
       introPAdder(e.currentTarget.textContent)
     })
   })
+
+  const resizeDisplay = document.createElement("div")
+  resizeDisplay.classList.add("resize-status")
+  document.body.append(resizeDisplay)
+  resizeDisplay.innerText = "FOOO"
+  window.onresize = () => {
+    const w = document.body.clientWidth
+    const h = document.body.clientHeight
+    resizeDisplay.innerText = `${h} x ${w}`
+  }
 }

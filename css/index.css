@@ -378,11 +378,13 @@ img {
 .blow-up {
   transform: scale(2);
 }
-.drag-status {
+.resize-status {
+  font-size: 5vh;
   position: fixed;
   right: 0;
   bottom: 0;
+  text-shadow: 0px 0px 2.5px white;
 }
-.drag-status.hide {
+.resize-status.hide {
   display: none;
 }
