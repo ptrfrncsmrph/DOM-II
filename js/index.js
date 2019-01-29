@@ -73,4 +73,19 @@ window.onload = () => {
     const h = document.body.clientHeight
     resizeDisplay.innerText = `${h} x ${w}`
   }
+
+  // Event delegation
+  const header = document.querySelector("header.intro")
+  const h2 = header.querySelector("h2")
+
+  header.addEventListener("click", () => {
+    console.log("Header clicked!!!")
+  })
+  h2.addEventListener("click", () => {
+    console.log("h2 clicked!!!")
+  })
+  introP.addEventListener("click", e => {
+    e.stopPropagation()
+    console.log("p clicked!!!")
+  })
 }
