@@ -1,3 +1,6 @@
+const replicate = n => x => Array(n).fill(x)
+const randomInRange = (m, n) => Math.round(Math.random() * (n - m)) + m
+
 // Your code goes here
 window.onload = () => {
   const mainNav = document.querySelector(".main-navigation")
@@ -6,6 +9,8 @@ window.onload = () => {
   const imgs = document.querySelectorAll("img")
   const anchors = document.querySelectorAll("a")
   const introP = document.querySelector(".intro p")
+
+  const initialP = introP.innerHTML
 
   const introPAdder = str => {
     const p = document.createElement("p")
@@ -45,7 +50,17 @@ window.onload = () => {
   })
   anchors.forEach(a => {
     a.addEventListener("focus", e => {
-      introPAdder(e.currentTarget.textContent)
+      const sentence = replicate(randomInRange(7, 11))(
+        e.currentTarget.textContent
+      )
+        .map((e, i) => (i > 0 ? e.toLowerCase() : e))
+        .join(" ")
+        .concat(".")
+      const p = replicate(randomInRange(5, 9))(sentence).join(" ")
+      introPAdder(p)
+    })
+    a.addEventListener("blur", () => {
+      introP.innerHTML = initialP
     })
   })
 
