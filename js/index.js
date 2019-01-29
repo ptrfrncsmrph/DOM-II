@@ -4,6 +4,14 @@ window.onload = () => {
   const intro = document.querySelector(".intro img")
   const modal = document.createElement("div")
   const imgs = document.querySelectorAll("img")
+  const anchors = document.querySelectorAll("a")
+  const introP = document.querySelector(".intro p")
+
+  const introPAdder = str => {
+    const p = document.createElement("p")
+    p.textContent = str
+    introP.prepend(p)
+  }
 
   modal.classList.add("modal", "hide")
   document.body.append(modal)
@@ -24,9 +32,20 @@ window.onload = () => {
       modal.classList.add("hide")
     }, 500)
   })
-  imgs.forEach(img =>
+  imgs.forEach(img => {
     img.addEventListener("drag", e => {
       e.currentTarget.style.display = "none"
     })
-  )
+    img.addEventListener("dragend", e => {
+      e.currentTarget.style.display = "block"
+    })
+    img.addEventListener("dblclick", e => {
+      e.currentTarget.classList.toggle("blow-up")
+    })
+  })
+  anchors.forEach(a => {
+    a.addEventListener("focus", e => {
+      introPAdder(e.currentTarget.textContent)
+    })
+  })
 }
