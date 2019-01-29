@@ -88,4 +88,11 @@ window.onload = () => {
     e.stopPropagation()
     console.log("p clicked!!!")
   })
+
+  anchors.forEach(a => {
+    a.setAttribute("href", "https://www.google.com/")
+    a.addEventListener("click", e => {
+      e.preventDefault()
+    })
+  })
 }
