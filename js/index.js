@@ -3,6 +3,8 @@ window.onload = () => {
   const mainNav = document.querySelector(".main-navigation")
   const intro = document.querySelector(".intro img")
   const modal = document.createElement("div")
+  const imgs = document.querySelectorAll("img")
+
   modal.classList.add("modal", "hide")
   document.body.append(modal)
 
@@ -22,4 +24,9 @@ window.onload = () => {
       modal.classList.add("hide")
     }, 500)
   })
+  imgs.forEach(img =>
+    img.addEventListener("drag", e => {
+      e.currentTarget.style.display = "none"
+    })
+  )
 }
