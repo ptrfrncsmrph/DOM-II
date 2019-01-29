@@ -180,6 +180,7 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 2;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -352,4 +353,7 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.hover-invert {
+  filter: hue-rotate(90deg);
 }
