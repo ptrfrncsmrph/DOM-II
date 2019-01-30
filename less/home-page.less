@@ -112,3 +112,41 @@
     }
   }
 }// home
+
+.hover-invert {
+  filter: hue-rotate(90deg);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ff0a;
+  &.hide {
+    display: none;
+  }
+  h1 {
+    font-size: 80vh;
+  }
+}
+
+.blow-up {
+  transform: scale(2);
+}
+
+.resize-status {
+  font-size: 5vh;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  text-shadow: 0px 0px 2.5px white;
+  &.hide {
+    display: none;
+  }
+}
